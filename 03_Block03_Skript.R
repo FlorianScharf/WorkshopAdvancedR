@@ -5,6 +5,7 @@
 install_and_load <- function(pakete) {
   install.packages(setdiff(pakete, rownames(installed.packages())))
   invisible(lapply(pakete, library, character.only = TRUE))
+  print(paste("Pakete geladen:", paste(pakete, collapse = ", ")))
 }
 
 berechne_skalenwert <- function(daten, id_var = "id", zeit_var = "zeitpunkt", wert_var = "wert") {
